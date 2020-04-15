@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Photo Gallery</title>
+
+    <!-- Script Source -->
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+</head>
+
+<style>
+
+    /* ------------------ Gallery ------------------ */
+
+.container
+{
+	width: 100%;
+	height: 100%;
+}
+.trans
+{
+	transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+}
+.top
+{
+	display: block;
+	width: 95vw;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5vh;
+}
+.ul__img
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	width: 100%;
+}
+.li__img
+{
+	position: relative;
+	float: left;
+	width: 20vw;
+	overflow: hidden;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.li__img::before
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: none;
+	content: '';
+	color: white;
+	opacity: 0.4;
+	text-align: center;
+	box-sizing: border-box;
+	pointer-events: none;
+	transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+.li__img:hover::before
+{
+	opacity: 0;
+	background-color: rgba(0,0,0,0.90);
+}
+.li__img a img
+{
+	height: 100%;
+    width: 100%;
+	overflow: hidden;
+}
+.lightbox
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.85);
+	z-index: 999;
+	opacity: 0;
+	pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+.lightbox:target
+{
+	outline: none;
+	top: 0;
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 1.2s ease;
+	-moz-transition: all 1.2s ease;
+	-ms-transition: all 1.2s ease;
+	-o-transition: all 1.2s ease;
+	-webkit-transition: all 1.2s ease;
+}
+
+.gallery {
+  background: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.gallery-cell {
+  width: 50vw;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px 0;
+}
+.gallery-cell img{
+  height: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.gallery-cell img:hover{
+  opacity: 1;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+.flickity-page-dots .dot{
+	background: white;
+}
+
+@media screen and (max-width: 768px){
+	.li__img
+  {
+    width: 30vw;
+  }
+  .gallery-cell {
+  width: 95vw;
+  height: auto;
+  margin: 0 10px;
+  padding: 10px 0;
+	}
+  .flickity-button{
+  	background: none;
+    color: white;
+  }
+  .entry-content ol{
+  	margin-bottom: 5px;
+  }
+}
+
+</style>
+
+<body>
+    
+    <div class="container">
+        <div class="top">
+            <div class="ul__img">
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina20.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina19.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina17.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina18.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina16.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina15.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina12.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina13.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina14.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina10.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina11.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina8.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina9.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina7.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina6.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina5.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina3.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina4.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina1.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina2.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina8.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina9.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina10.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina6.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina7.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina4.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina5.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina2.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina3.jpg"></a></div>
+                <div class="li__img"><a href="#gallery"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina1.jpg"></a></div>
+            </div>
+    
+            <div class="lightbox trans" id="gallery">
+                <div style="width: 100%; height: auto;">
+                    <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+    
+                        <a href="#_1" class="gallery-cell" id="img_111"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina20.jpg"></a>
+                        <a href="#_1" class="gallery-cell " id="img_2"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina19.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_3"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina17.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_4"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina18.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_5"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina16.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_6"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina15.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_7"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina12.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_8"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina13.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_9"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina14.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_10"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina10.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_11"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina11.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_12"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina8.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_13"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina9.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_14"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina7.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_15"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina6.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_16"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina5.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_17"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina3.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_18"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina4.jpg"></a>
+                        <a href="#_1" class="gallery-cell" id="img_19"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina1.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/LaTomatina2.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina8.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina9.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina10.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina6.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina7.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina4.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina5.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina2.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina3.jpg"></a>
+                        <a href="#_1" class="gallery-cell"><img src="https://tomatina.org/wp-content/uploads/2020/03/HistoriaLaTomatina1.jpg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+</html>

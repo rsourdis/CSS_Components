@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Carrousel</title>
+</head>
+<style>
+
+    /* CARRUSEL DE TRANSPORTE DESDE CIUDADES */
+
+::-webkit-scrollbar {
+  height: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.3); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb:horizontal {
+  background: #f50000;
+  width: 20px;
+  border-radius:20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c00303; 
+}
+
+.carousel {
+  width: 100%;
+  overflow: auto;
+  padding: 10px 30px;
+  position: relative;
+}
+
+.carousel__container {
+  white-space: nowrap;
+  margin: 70px 0;
+  padding-bottom: 10px;
+}
+
+.carousel-item {
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  background-image: url("https://tomatina.org/wp-content/uploads/2020/03/TomatinaBusGrande.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 350ms all;
+  transform-origin: center left;
+  position: relative;
+  box-shadow: 2px 2px 15px rgb(165, 165, 165);
+}
+
+.carousel-item__details {
+    padding: 10px 0;
+    margin: 1vh 0 1vh 0;
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-item__details-title {
+    color: #f50000;
+    font-size: 1.2em;
+    margin-bottom: 0.5vh;
+    font-weight: 700;
+}
+
+.carousel-item__details-subtitle{
+    color: black;
+    font-size: 1em;
+}
+
+.carousel-item__details-button{
+    color: white;
+    background: #f50000;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 40px;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 2px 2px 15px rgb(165, 165, 165);
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-item:hover ~ .carousel-item {
+    transform: translate3d(100px, 0, 0);
+  }
+
+  .carousel__container:hover .carousel-item {
+    opacity: 0.3;
+  }
+
+  .carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    width: 100%;
+    overflow: auto;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  .carousel__container {
+    white-space: nowrap;
+    margin: 10px 0;
+    padding-bottom: 10px;
+  }
+
+  .carousel-item__details {
+    padding: 10px 0;
+    margin: 3vh 0 3vh 0;
+  }
+
+    .carousel-item__details-title {
+        font-size: 1.5em;
+        margin-bottom: 0.5vh;
+    }
+
+    .carousel-item__details-subtitle{
+        font-size: 1.2em;
+    }
+
+    .carousel-item__details-button{
+        padding: 10px 20px;
+        bottom: 6%;
+        font-size: 22px;
+    }
+
+    .carousel-item {
+        width: 300px;
+        height: 375px;
+    }
+}
+
+</style>
+<body>
+    
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">VALENCIA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/group/1-valencia">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">BARCELONA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/group/2-barcelona">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">MADRID</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/group/3-madrid">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">ALICANTE</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/44/tomatina-bus-from-alicante">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">ALMERIA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/52/tomatina-bus-from-almeria">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">BENIDORM</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/45/tomatina-bus-from-benidorm">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">CALPE</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/46/tomatina-bus-from-calpe">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">CARTAGENA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/50/tomatina-bus-from-cartagena">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">DENIA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/48/tomatina-bus-from-denia">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">GANDIA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/49/tomatina-bus-from-gandia">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">JÁVEA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/47/tomatina-bus-from-javea">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">LA MANGA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/51/tomatina-bus-from-la-manga">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">MALAGA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/53/tomatina-bus-from-malaga">RESERVAR BUS</a>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-title">TOMATINA DESDE</div>
+                    <div class="carousel-item__details-title">TORREVIEJA</div>
+                    <h3 class="carousel-item__details-subtitle">Paella + Sangria</h3>
+                </div>
+                <a class="carousel-item__details-button" href="https://booking.tomatina.es/es/n/booking/43/tomatina-bus-from-torrevieja">RESERVAR BUS</a>
+            </div>
+            
+        </div>
+    </section>
+
+</body>
+</html>

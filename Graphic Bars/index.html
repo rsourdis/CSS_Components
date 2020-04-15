@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Bars</title>
+</head>
+<style>
+
+.graph-cont {
+  width: calc(100% - 40px);
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.graph-cont h3{
+	font-family: 'Roboto';
+}
+
+.bar{
+  height: 30px;
+  max-width: 800px;
+  margin: 0 0 10px 0;
+  line-height: 30px;
+  font-size: 16px;
+  color: white;
+  padding: 0 0 0 10px;
+  position: relative;
+}
+
+.bar::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  top: 0;
+  background: #ecf0f1;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px rgb(165, 165, 165);
+}
+
+.bar::after {
+  content: '';
+  background: #f50000;
+  height: 30px;
+  transition: 0.7s;
+  display: block;
+  width: 100%;
+  -webkit-animation: bar-before 1 1.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 40px;
+}
+
+.bar1::after {
+  max-width: 97%;
+}
+
+.bar2::after {
+  max-width: 75%;
+}
+
+.bar3::after {
+  max-width: 60%;
+}
+
+.bar4::after {
+  max-width: 40%;
+}
+
+@-webkit-keyframes bar-before {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px){
+    .graph-cont h3{
+  font-size: 1.4em;
+  }
+}
+
+</style>
+<body>
+    
+    <div class="graph-cont">
+        <h3 style="margin: 5px 0 5px 20px; padding: 0;">Participantes Satisfechos - 97%</h3>
+        <div class="bar bar1"></div>
+        <h3 style="margin: 5px 0 5px 20px; padding: 0;">Vuelven a la Tomatina - 75%</h3>
+        <div class="bar bar2"></div>
+        <h3 style="margin: 5px 0 5px 20px; padding: 0;">Hombres - 60%</h3>
+        <div class="bar bar3"></div>
+        <h3 style="margin: 5px 0 5px 20px; padding: 0;">Mujeres - 40%</h3>
+        <div class="bar bar4"></div>
+    </div>
+
+</body>
+</html>

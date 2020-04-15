@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Title</title>
+</head>
+<style>
+
+.title-box{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.text-title {
+    text-align: center;
+  	margin-right: 5px;
+    text-transform: uppercase;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+    color: #f50000;
+    text-shadow: 1px 1px 1px #c00303,
+        1px 2px 1px #c00303,
+        1px 3px 1px #c00303,
+        1px 4px 1px #c00303,
+      	1px 5px 1px #c00303,
+      	1px 6px 1px #c00303,
+    		1px 7px 4px rgba(16,16,16,0.7);
+}
+
+@media screen and (max-width: 995px){
+  .title-box{
+  	flex-direction: column;
+  }
+  .text-title {
+  	font-size: 2.5em;
+    margin-bottom: 20px
+  }
+}
+
+</style>
+<body>
+    
+    <div class="title-box">
+        <p class="text-title">te llevamos a</p>
+        <p class="text-title">la tomatina</p>  
+    </div>
+
+</body>
+</html>
